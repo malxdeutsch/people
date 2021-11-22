@@ -32,8 +32,8 @@ def person_view(request, person_id):
     for person in people:
         if person['id'] == person_id:
             peep = person
-    return render('request', 'person.html', {'person':peep, 'id': person_id})
+    return render(request, 'person.html', {'person':peep, 'id': person_id})
 
 def people_view(request):
     sorted_people = sorted(people, key=lambda x:x['age'])
-    return render('request', 'people.html', {'people': sorted_people})
+    return render(request, 'people.html', {'people': sorted_people})
